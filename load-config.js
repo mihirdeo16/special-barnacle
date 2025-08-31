@@ -88,7 +88,20 @@ function loadSignatureConfig() {
             document.querySelectorAll('.location-text').forEach(el => {
                 const row = el.closest('.contact-item');
                 if (config.location) {
-                    el.textContent = config.location;
+                    // If location is present, create a Google Maps link
+                    if (el.tagName.toLowerCase() === 'a') {
+                        el.textContent = config.location;
+                        el.href = 'https://www.google.com/maps/place/' + encodeURIComponent(config.location);
+                        el.target = '_blank';
+                    } else {
+                        // If not an anchor, replace with anchor
+                        const anchor = document.createElement('a');
+                        anchor.textContent = config.location;
+                        anchor.href = 'https://www.google.com/maps/place/' + encodeURIComponent(config.location);
+                        anchor.target = '_blank';
+                        anchor.className = 'location-text';
+                        el.replaceWith(anchor);
+                    }
                     if (row) row.style.display = '';
                 } else {
                     if (row) row.style.display = 'none';
