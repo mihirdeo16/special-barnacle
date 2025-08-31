@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Signature Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .signature-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .signature {
+            text-align: left;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 25px;
+            background: white;
+        }
+
+        .profile-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #007bff;
+            margin: 0 0 15px 0;
+            display: block;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .name {
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .title {
+            font-size: 10px;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .contact-section {
+            color: #333;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .contact-section h3 {
+            margin: 0 0 8px 0;
+            font-size: 12px;
+            text-align: left;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .contact-divider {
+            border-top: 1px solid #007bff;
+            margin: 8px 0 10px 0;
+            width: 20%;
+        }
+
+        .contact-item {
+            margin-bottom: 8px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px;
+        }
+
+        .contact-item a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .icon {
+            font-size: 8px;
+        }
+
+        .linkedin-icon {
+            background-color: #0077b5;
+            color: white;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-weight: bold;
+            font-size: 10x;
+            font-family: Arial, sans-serif;
+        }
+
+        .preview-note {
+            background-color: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #0066cc;
+        }
+
+        .html-code-section {
+            margin-top: 30px;
+        }
+
+        .html-code-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            font-family: monospace;
+            font-size: 12px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signature-container">
+        <h1>Email Signature Template</h1>
+
+        <div class="signature">
+            <img src="images/image.png" alt="Your Photo" class="profile-photo">
+            <div class="name">Loading...</div>
+            <div class="title">Loading...</div>
+
+            <div class="contact-section">
+                <h3>Contact Me</h3>
+                <div class="contact-divider"></div>
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    <span class="phone-text">Loading...</span>
+                </div>
+                <div class="contact-item">
+                    <span class="linkedin-icon">in</span>
+                    <a href="#" class="linkedin-link">Loading...</a>
+                </div>
+            </div>
+        </div>
+        <script src="load-config.js"></script>
+</body>
+
+</html>
