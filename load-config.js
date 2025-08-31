@@ -14,6 +14,30 @@ function loadSignatureConfig() {
             return response.json();
         })
         .then(config => {
+            // Update GitHub if present
+            if (config.github && config.github_user) {
+                document.querySelectorAll('.github-link').forEach(el => {
+                    el.href = config.github;
+                    el.textContent = config.github_user;
+                    el.style.display = '';
+                });
+            } else {
+                document.querySelectorAll('.github-link').forEach(el => {
+                    el.style.display = 'none';
+                });
+            }
+
+            // Update location if present
+            if (config.location) {
+                document.querySelectorAll('.location-text').forEach(el => {
+                    el.textContent = config.location;
+                    el.style.display = '';
+                });
+            } else {
+                document.querySelectorAll('.location-text').forEach(el => {
+                    el.style.display = 'none';
+                });
+            }
             console.log('Config loaded:', config);
 
             // Update all matching elements for personal information
@@ -25,13 +49,50 @@ function loadSignatureConfig() {
             });
 
             // Update all matching elements for contact information
+            // Phone
             document.querySelectorAll('.phone-text').forEach(el => {
-                el.textContent = config.phone;
+                const row = el.closest('.contact-item');
+                if (config.phone) {
+                    el.textContent = config.phone;
+                    if (row) row.style.display = '';
+                } else {
+                    if (row) row.style.display = 'none';
+                }
             });
 
+            // LinkedIn
             document.querySelectorAll('.linkedin-link').forEach(el => {
-                el.href = config.linkedin;
-                el.textContent = config.linkedin_user;
+                const row = el.closest('.contact-item');
+                if (config.linkedin && config.linkedin_user) {
+                    el.href = config.linkedin;
+                    el.textContent = config.linkedin_user;
+                    if (row) row.style.display = '';
+                } else {
+                    if (row) row.style.display = 'none';
+                }
+            });
+
+            // GitHub
+            document.querySelectorAll('.github-link').forEach(el => {
+                const row = el.closest('.contact-item');
+                if (config.github && config.github_user) {
+                    el.href = config.github;
+                    el.textContent = config.github_user;
+                    if (row) row.style.display = '';
+                } else {
+                    if (row) row.style.display = 'none';
+                }
+            });
+
+            // Location
+            document.querySelectorAll('.location-text').forEach(el => {
+                const row = el.closest('.contact-item');
+                if (config.location) {
+                    el.textContent = config.location;
+                    if (row) row.style.display = '';
+                } else {
+                    if (row) row.style.display = 'none';
+                }
             });
 
             // Update the HTML code in the textarea
@@ -40,6 +101,14 @@ function loadSignatureConfig() {
             console.log('Configuration loaded successfully!');
         })
         .catch(error => {
+            // Fallback for GitHub
+            document.querySelectorAll('.github-link').forEach(el => {
+                el.style.display = 'none';
+            });
+            // Fallback for location
+            document.querySelectorAll('.location-text').forEach(el => {
+                el.style.display = 'none';
+            });
             console.error('Error loading configuration:', error);
 
             // Fallback to default values

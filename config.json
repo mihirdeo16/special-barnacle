@@ -3,5 +3,8 @@
     "phone": "+1(123) 456-78910",
     "title": "Machine Learning Engineer",
     "linkedin": "https://www.linkedin.com/in/sampleuser",
-    "linkedin_user": "sampleuser"
+    "linkedin_user": "sampleuser",
+    "github": "https://github.com/sampleuser",
+    "github_user": "sampleuser",
+    "location": "Sample Location"
 }
