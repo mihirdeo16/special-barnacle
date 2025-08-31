@@ -29,10 +29,11 @@ Place your profile picture as `image.png` in the `images/` folder.
 
 ### 3. Preview and Copy
 
-1. Open `signature.html` in your web browser
-2. Your information will automatically load from `config.json`
-3. Copy the HTML code from the textarea
-4. Paste it into your email client's signature settings
+1. Run `python3 -m http.server 5500`
+2. Open `http://localhost:5500/signature.html`
+3. Your information will automatically load from `config.json`
+4. Copy the HTML code from the textarea
+5. Paste it into your email client's signature settings
 
 ## Features
 
