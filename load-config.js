@@ -16,16 +16,23 @@ function loadSignatureConfig() {
         .then(config => {
             console.log('Config loaded:', config);
 
-            // Update personal information
-            document.querySelector('.name').textContent = config.name;
-            document.querySelector('.title').textContent = config.title;
+            // Update all matching elements for personal information
+            document.querySelectorAll('.name').forEach(el => {
+                el.textContent = config.name;
+            });
+            document.querySelectorAll('.title').forEach(el => {
+                el.textContent = config.title;
+            });
 
-            // Update contact information
-            document.querySelector('.phone-text').textContent = config.phone;
+            // Update all matching elements for contact information
+            document.querySelectorAll('.phone-text').forEach(el => {
+                el.textContent = config.phone;
+            });
 
-            const linkedinLink = document.querySelector('.linkedin-link');
-            linkedinLink.href = config.linkedin;
-            linkedinLink.textContent = config.linkedin_user;
+            document.querySelectorAll('.linkedin-link').forEach(el => {
+                el.href = config.linkedin;
+                el.textContent = config.linkedin_user;
+            });
 
             // Update the HTML code in the textarea
             updateHTMLCode(config);
@@ -37,15 +44,19 @@ function loadSignatureConfig() {
 
             // Fallback to default values
             console.log('Using fallback values...');
-            document.querySelector('.name').textContent = 'John Doe';
-            document.querySelector('.title').textContent = 'Software Developer';
-            document.querySelector('.phone-text').textContent = '+1 (555) 123-4567';
-
-            const linkedinLink = document.querySelector('.linkedin-link');
-            linkedinLink.href = 'https://linkedin.com/in/johndoe';
-            linkedinLink.textContent = 'LinkedIn';
-
-
+            document.querySelectorAll('.name').forEach(el => {
+                el.textContent = 'John Doe';
+            });
+            document.querySelectorAll('.title').forEach(el => {
+                el.textContent = 'Software Developer';
+            });
+            document.querySelectorAll('.phone-text').forEach(el => {
+                el.textContent = '+1 (555) 123-4567';
+            });
+            document.querySelectorAll('.linkedin-link').forEach(el => {
+                el.href = 'https://linkedin.com/in/johndoe';
+                el.textContent = 'LinkedIn';
+            });
 
             // Update HTML code with fallback values
             const fallbackConfig = {
